@@ -61,9 +61,11 @@ double transform_image(char *source, char *curve, int light, char *dest)
 void run_transfo_file(FILE *tf) {
   char source[255], curve[255], dest[255];
   int light;
+  double total_cycles = 0;
   while (fscanf(tf, "%s %s %d %s", source, curve, &light, dest) == 4) {
-    transform_image(source, curve, light, dest);
+    total_cycles += transform_image(source, curve, light, dest);
   }
+  printf("Total cycles: %f\n", total_cycles);
 }
 
 int main(int ac, char *av[]) {
