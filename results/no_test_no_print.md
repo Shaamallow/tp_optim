@@ -26,7 +26,7 @@
 
 ## Output
 
-No significant changes, only user time is reduced!
+No significant changes, only user time is reduced! (from ~8s to ~2.5s)
 
 ```bash
 837504741.000000 clock cycles.
@@ -39,5 +39,5 @@ No significant changes, only user time is reduced!
 132159453.000000 clock cycles.
 211608412.000000 clock cycles.
 205633170.000000 clock cycles.
-Total : 5514319814.000000 clock cycles
+Total : 5.514.319.814.000000 clock cycles
 ```

@@ -9,27 +9,17 @@ void copy(int w, int h, unsigned char *src, unsigned char *dest) {
 }
 
 void light(int w, int h, unsigned char *img, unsigned char val) {
-  int i, j;
-  unsigned char current;
-
-  for (i = 0; i < w; i++) {
-    for (j = 0; j < h; j++) {
-      current = img[j * w + i];
-      img[j * w + i] = (((int)current + val) > 255) ? 255 : current + val;
+    int size = w * h;
+    for (int i = 0; i < size; i++) {
+        img[i] = ((int)img[i] + val > 255) ? 255 : img[i] + val;
     }
-  }
 }
 
 void curve(int w, int h, unsigned char *img, unsigned char *lut) {
-  int i, j;
-  unsigned char current;
-
-  for (i = 0; i < w; i++) {
-    for (j = 0; j < h; j++) {
-      current = img[j * w + i];
-      img[j * w + i] = lut[current];
+    int size = w * h;
+    for (int i = 0; i < size; i++) {
+        img[i] = lut[img[i]];
     }
-  }
 }
 
 void transfo(int w, int h, unsigned char *src, unsigned char *lut,
